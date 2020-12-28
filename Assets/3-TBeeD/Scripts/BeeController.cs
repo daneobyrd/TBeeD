@@ -8,7 +8,10 @@ namespace TBeeD
         [SerializeField] private float dashForce = 0f;
         [SerializeField] private float dashDuration = 0f;
         [SerializeField] private AnimationCurve dashCurve = default;
+        private float currentSpeed;
         private Rigidbody2D rb;
+        private float horizontalAxis;
+        private float verticalAxis;
         private Vector2 moveInput;
         private bool activatedDash;
         private float dashTimer = 0f;
@@ -16,6 +19,7 @@ namespace TBeeD
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            currentSpeed = moveSpeed;
         }
 
         void Update()
@@ -25,8 +29,18 @@ namespace TBeeD
 
         void FixedUpdate()
         {
-            rb.velocity = moveInput * moveSpeed;
-            transform.up = rb.velocity.normalized;
+            currentSpeed = horizontalAxis == 0 && verticalAxis == 0 ? 0 : moveSpeed;
+
+            if (horizontalAxis == 0 && verticalAxis == 0)
+            {
+                currentSpeed = 0;
+            }
+            else
+            {
+                transform.up = rb.velocity.normalized;
+            }
+
+            rb.velocity = moveInput * currentSpeed;
 
             if (activatedDash)
             {
@@ -46,9 +60,9 @@ namespace TBeeD
 
         void Move()
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
-            moveInput = new Vector2(horizontal, vertical).normalized;
+            horizontalAxis = Input.GetAxisRaw("Horizontal");
+            verticalAxis = Input.GetAxisRaw("Vertical");
+            moveInput = new Vector2(horizontalAxis, verticalAxis).normalized;
         }
 
         void Dash()
