@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 896637338}
   - component: {fileID: 896637340}
   - component: {fileID: 896637341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Bread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,4 +1476,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e816c4b2228b004b9501ca9795ecc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightBread: {fileID: 0}
