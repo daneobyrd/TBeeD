@@ -6,9 +6,12 @@ namespace TBeeD
     {
         [SerializeField] private float moveSpeed = 0f;
         [SerializeField] private float dashForce = 0f;
+        [SerializeField] private float dashDuration = 0f;
+        [SerializeField] private AnimationCurve dashCurve = default;
         private Rigidbody2D rb;
         private Vector2 moveInput;
         private bool activatedDash;
+        private float dashTimer = 0f;
 
         void Awake()
         {
@@ -52,8 +55,15 @@ namespace TBeeD
         {
             if (activatedDash)
             {
-                rb.AddForce(transform.up * dashForce, ForceMode2D.Impulse);
-                activatedDash = false;
+                dashTimer += Time.fixedDeltaTime;
+
+                if (dashTimer >= dashDuration)
+                {
+                    activatedDash = false;
+                    dashTimer = 0f;
+                }
+
+                rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
             }
         }
     }
