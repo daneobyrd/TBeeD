@@ -16,6 +16,7 @@ namespace TBeeD
         private bool activatedDash;
         private float dashTimer = 0f;
 
+
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
