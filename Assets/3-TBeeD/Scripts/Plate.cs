@@ -14,9 +14,12 @@ namespace TBeeD
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            timer += Time.deltaTime;
+
+            if (timer >= duration)
             {
-                rightBread.Flip();
+                timer = 0f;
+                StartCoroutine(OnExit());
             }
         }
 
@@ -27,13 +30,23 @@ namespace TBeeD
 
         IEnumerator OnExit()
         {
+            rightBread.Flip();
+
             while (transform.position.x > exitPositionX)
             {
                 transform.Translate(Vector2.left * moveSpeed);
+                yield return null;
             }
 
             transform.position = new Vector2(enterPositionX, transform.position.y);
-            yield return null;
+
+            while (transform.position.x >= 0f)
+            {
+                transform.Translate(Vector2.left * moveSpeed);
+                yield return null;
+            }
+
+            transform.position = new Vector3(0f, transform.position.y, transform.position.z);
         }
     }
 }
