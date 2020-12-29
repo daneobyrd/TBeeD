@@ -26,7 +26,6 @@ namespace TBeeD
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
             currentSpeed = moveSpeed;
-            dashEffect = Instantiate(dashEffectPrefab, transform).GetComponent<ParticleSystem>();
         }
 
         void Update()
@@ -80,6 +79,14 @@ namespace TBeeD
 
         void Dash()
         {
+            if (dashEffect == null)
+            {
+                dashEffect = Instantiate(dashEffectPrefab, transform).GetComponent<ParticleSystem>();
+                dashEffect.transform.SetParent(transform);
+                dashEffect.Play();
+                dashEffect.transform.SetParent(null);
+            }
+
             dashTimer += Time.fixedDeltaTime;
 
             if (dashTimer >= dashDuration)
@@ -87,15 +94,14 @@ namespace TBeeD
                 activatedDash = false;
                 dashTimer = 0f;
                 animator.Play("beeMoveRegular");
+
+                if (dashEffect != null)
+                {
+                    Destroy(dashEffect.gameObject);
+                }
             }
 
             rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
-
-            if (!dashEffect.isPlaying)
-            {
-                dashEffect.Play();
-            }
-
             onBeeMove.Invoke();
         }
     }
