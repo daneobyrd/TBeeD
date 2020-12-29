@@ -8,6 +8,7 @@ namespace TBeeD
     {
         [SerializeField] private UnityEvent onStart;
         [SerializeField] private UnityEvent onLose;
+        [SerializeField] private SpriteRenderer rightBread;
 
         private float gameLength = 4.8f;
 
@@ -22,6 +23,7 @@ namespace TBeeD
             StopAllCoroutines();
             MinigameManager.Instance.PlaySound("WinGame");
             MinigameManager.Instance.minigame.gameWin = true;
+            rightBread.sortingOrder = 4;
         }
         public void OnLose()
         {
