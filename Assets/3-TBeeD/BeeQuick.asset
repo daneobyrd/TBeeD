@@ -18,43 +18,43 @@ MonoBehaviour:
   - soundName: Jam
     clip: {fileID: 8300000, guid: c71ecc3efe3db4a4ebae45989cedf0a2, type: 3}
     volume: 1
-    minPitch: 0
+    minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   - soundName: Splat
     clip: {fileID: 8300000, guid: bc49ddd4752ade842baf50295b287076, type: 3}
     volume: 1
-    minPitch: 0
-    maxPitch: 1
+    minPitch: 0.892
+    maxPitch: 1.05
     source: {fileID: 0}
   - soundName: PlateSlide
     clip: {fileID: 8300000, guid: 40e0c06ed14dd1f409c24368be011e7e, type: 3}
     volume: 1
-    minPitch: 0
-    maxPitch: 1
+    minPitch: 0.85
+    maxPitch: 1.12
     source: {fileID: 0}
   - soundName: BreadSplat
     clip: {fileID: 8300000, guid: 88b05cac056b60f478a65eaa488ee59e, type: 3}
     volume: 1
-    minPitch: 0
-    maxPitch: 1
+    minPitch: 0.97
+    maxPitch: 1.09
     source: {fileID: 0}
-  - soundName: Win
+  - soundName: WinGame
     clip: {fileID: 8300000, guid: 456a9f3b1cc235d43a9d38cad6109606, type: 3}
     volume: 1
     minPitch: 0
     maxPitch: 1
     source: {fileID: 0}
-  - soundName: Lose
+  - soundName: LoseGame
     clip: {fileID: 8300000, guid: 5d9e2c28b3900bd4eb59beb969f1e282, type: 3}
     volume: 1
-    minPitch: 0
+    minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   - soundName: Buzz
     clip: {fileID: 8300000, guid: eb557689d0dabd74388b63f65de4f0aa, type: 3}
     volume: 0.654
-    minPitch: 0
+    minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   gameWin: 0

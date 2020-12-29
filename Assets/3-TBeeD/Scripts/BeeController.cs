@@ -10,6 +10,7 @@ namespace TBeeD
         [SerializeField] private float dashDuration = 0f;
         [SerializeField] private AnimationCurve dashCurve = default;
         [SerializeField] private UnityEvent onBeeMove;
+        [SerializeField] private GameObject dashEffectPrefab = null;
         private float currentSpeed;
         private Rigidbody2D rb;
         private float horizontalAxis;
@@ -17,11 +18,13 @@ namespace TBeeD
         private Vector2 moveInput;
         private bool activatedDash;
         private float dashTimer = 0f;
+        private ParticleSystem dashEffect;
 
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             currentSpeed = moveSpeed;
+            dashEffect = Instantiate(dashEffectPrefab, transform).GetComponent<ParticleSystem>();
         }
 
         void Update()
@@ -74,19 +77,22 @@ namespace TBeeD
 
         void Dash()
         {
-            if (activatedDash)
+            dashTimer += Time.fixedDeltaTime;
+
+            if (dashTimer >= dashDuration)
             {
-                dashTimer += Time.fixedDeltaTime;
-
-                if (dashTimer >= dashDuration)
-                {
-                    activatedDash = false;
-                    dashTimer = 0f;
-                }
-
-                rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
-                onBeeMove.Invoke();
+                activatedDash = false;
+                dashTimer = 0f;
             }
+
+            rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
+
+            if (!dashEffect.isPlaying)
+            {
+                dashEffect.Play();
+            }
+
+            onBeeMove.Invoke();
         }
     }
 }
