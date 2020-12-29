@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace TBeeD
 {
@@ -8,6 +9,7 @@ namespace TBeeD
         [SerializeField] private float dashForce = 0f;
         [SerializeField] private float dashDuration = 0f;
         [SerializeField] private AnimationCurve dashCurve = default;
+        [SerializeField] private UnityEvent onBeeMove;
         private float currentSpeed;
         private Rigidbody2D rb;
         private float horizontalAxis;
@@ -15,7 +17,6 @@ namespace TBeeD
         private Vector2 moveInput;
         private bool activatedDash;
         private float dashTimer = 0f;
-
 
         void Awake()
         {
@@ -42,6 +43,11 @@ namespace TBeeD
             }
 
             rb.velocity = moveInput * currentSpeed;
+
+            if (currentSpeed > 0)
+            {
+                onBeeMove.Invoke();
+            }
 
             if (activatedDash)
             {
@@ -79,6 +85,7 @@ namespace TBeeD
                 }
 
                 rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
+                onBeeMove.Invoke();
             }
         }
     }

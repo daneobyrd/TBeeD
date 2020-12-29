@@ -2,7 +2,6 @@
 // https://twitter.com/minionsart
 // https://www.patreon.com/posts/rendertexture-15961186
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,14 +23,14 @@ public class PaintBrush : MonoBehaviour
 
         // Set up a canvas with a raw image, and make a RenderTexture for it
 
-        // Instead of Raycasting, use the mouse position to paint to the RenderTexture. Get the X and Y coordinates by 
+        // Instead of Raycasting, use the mouse position to paint to the RenderTexture. Get the X and Y coordinates by
 
         // xCoordinate = Mathf.Floor(Input.mousePosition.x - rawImage.rectTransform.position.x);
         // yCoordinate = Mathf.Floor(Input.mousePosition.y - rawImage.rectTransform.position.y);
         // DrawTexture(texture, xCoordinate, yCoordinate);
         // With this you can draw on the RawImage UI component
 
-        // 3D Mesh Painting 
+        // 3D Mesh Painting
         Debug.DrawRay(transform.position, Vector3.down * 20f, Color.magenta);
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit))

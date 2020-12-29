@@ -7,7 +7,6 @@ namespace TBeeD
     {
         [SerializeField] private RawImage overlayImage;
         private Camera drawingCamera;
-        private GameObject beeTrail;
 
         void Awake()
         {

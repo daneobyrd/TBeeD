@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: breadflip
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7605459875549262113}
@@ -35,7 +35,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: breadflip_end
-  m_Speed: 0.1
+  m_Speed: 0
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5799664595384872152}
