@@ -42,7 +42,7 @@ MonoBehaviour:
   - soundName: WinGame
     clip: {fileID: 8300000, guid: 456a9f3b1cc235d43a9d38cad6109606, type: 3}
     volume: 1
-    minPitch: 0
+    minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
   - soundName: LoseGame

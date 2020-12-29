@@ -15,7 +15,7 @@ namespace TBeeD
         [SerializeField] private GameObject paintSurface;
         private bool callWin = false;
 
-        private float gameLength = 4.8f;
+        [SerializeField] private float gameLength = 4.8f;
 
         private void Start()
         {
@@ -38,12 +38,7 @@ namespace TBeeD
 
         public void OnWin()
         {
-            StopAllCoroutines();
-            MinigameManager.Instance.PlaySound("WinGame");
             MinigameManager.Instance.minigame.gameWin = true;
-            rightBread.sortingOrder = 4;
-            rightBread.GetComponent<Bread>().Flip();
-            Destroy(paintSurface);
         }
 
         public void OnLose()
@@ -54,10 +49,25 @@ namespace TBeeD
             Destroy(paintSurface);
         }
 
+        private void OnWinAfterTimer()
+        {
+            MinigameManager.Instance.PlaySound("WinGame");
+            rightBread.sortingOrder = 4;
+            rightBread.GetComponent<Bread>().Flip();
+            Destroy(paintSurface);
+        }
+
         IEnumerator GameTimer()
         {
             yield return new WaitForSeconds(gameLength);
-            OnLose();
+            if (MinigameManager.Instance.minigame.gameWin)
+            {
+                OnWinAfterTimer();
+            }
+            else
+            {
+                OnLose();
+            }
         }
     }
 }
