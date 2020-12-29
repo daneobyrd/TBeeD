@@ -4,6 +4,8 @@ namespace TBeeD
 {
     public class Bread : MonoBehaviour
     {
+        public bool CompletedFlip { get; set; }
+
         private Animator animator;
 
         void Awake()
@@ -14,6 +16,17 @@ namespace TBeeD
         internal void Flip()
         {
             animator.SetTrigger("Flip");
+        }
+
+        internal void Unflip()
+        {
+            animator.SetTrigger("Unflip");
+        }
+
+        internal void OnCompleteFlip()
+        {
+            Debug.Log("OnCompleteFlip");
+            CompletedFlip = true;
         }
     }
 }
