@@ -10,6 +10,7 @@ namespace TBeeD
         [SerializeField] private float dashDuration = 0f;
         [SerializeField] private AnimationCurve dashCurve = default;
         [SerializeField] private UnityEvent onBeeMove;
+        [SerializeField] private UnityEvent onBeeDash;
         [SerializeField] private GameObject dashEffectPrefab = null;
         private float currentSpeed;
         private Rigidbody2D rb;
@@ -67,6 +68,7 @@ namespace TBeeD
             {
                 activatedDash = true;
                 animator.Play("beeDash");
+                onBeeDash.Invoke();
             }
         }
 

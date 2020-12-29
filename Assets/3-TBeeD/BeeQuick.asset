@@ -57,4 +57,10 @@ MonoBehaviour:
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
+  - soundName: Dash
+    clip: {fileID: 8300000, guid: c71ecc3efe3db4a4ebae45989cedf0a2, type: 3}
+    volume: 0.993
+    minPitch: 0.988
+    maxPitch: 1.1
+    source: {fileID: 0}
   gameWin: 0
