@@ -72,7 +72,7 @@ namespace TBeeD
                 activatedDash = true;
                 animator.Play("beeDash");
 
-                if (MinigameManager.Instance.minigame.gameWin)
+                if (!MinigameManager.Instance.minigame.gameWin)
                 {
                     onBeeDash.Invoke();
                 }
