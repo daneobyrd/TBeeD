@@ -1003,9 +1003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0397a91c64f01374c886594387f22335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  dashForce: 6
-  dashDuration: 1
+  moveSpeed: 2.5
+  dashForce: 5
+  dashDuration: 0.75
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -1019,14 +1019,32 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.40131176
     - serializedVersion: 3
-      time: 0.24497044
-      value: 0.999225
-      inSlope: -0.43642944
-      outSlope: -0.43642944
+      time: 0.071577705
+      value: 0.9827148
+      inSlope: 0.15542518
+      outSlope: 0.15542518
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.07300309
-      outWeight: 0.08239906
+      outWeight: 0.4999858
+    - serializedVersion: 3
+      time: 0.34098336
+      value: 0.75076
+      inSlope: 0.17737007
+      outSlope: 0.17737007
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.39907792
+      outWeight: 0.21182859
+    - serializedVersion: 3
+      time: 0.623805
+      value: 0.44908553
+      inSlope: 0.11617076
+      outSlope: 0.11617076
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.53022176
+      outWeight: 0.18399602
     - serializedVersion: 3
       time: 1
       value: 0.004717773
@@ -1934,7 +1952,7 @@ SpriteRenderer:
   m_Size: {x: 1.26, y: 1.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1895230614
