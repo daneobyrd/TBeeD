@@ -212,16 +212,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48756562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4807580218df41542915682b8791df7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rightBread: {fileID: 896637341}
   duration: 1
-  moveSpeed: 2
-  enterPositionX: 15
-  exitPositionX: -15
+  moveSpeed: 0
+  enterPositionX: 12
+  exitPositionX: -12
 --- !u!1 &64938561
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +316,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &64938566
 RectTransform:
@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 858606642}
   - component: {fileID: 858606641}
   - component: {fileID: 858606643}
+  - component: {fileID: 858606644}
   m_Layer: 10
   m_Name: Brush
   m_TagString: Untagged
@@ -528,8 +529,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8aa19512ca5fe114bb3fcaec76176fd8, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: c54d2fcd52d610141b512c55b3a0947d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -566,6 +567,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae875d9acb0e6a499fdc077f1e3f483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1818360609 &858606644
+RotationConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858606640}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: 0, y: 0, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
+  m_AffectRotationX: 0
+  m_AffectRotationY: 0
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 899550108}
+    weight: 1
 --- !u!1 &896637337
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +643,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -7781092468463754899, guid: 2563be5d332f7a9489cef5215b26cf8d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -661,7 +681,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2ca27de1c372d15488ebdbd2c02f408c, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -694,7 +714,7 @@ GameObject:
   - component: {fileID: 899550109}
   - component: {fileID: 899550110}
   - component: {fileID: 899550111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +759,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: e0860a813304dfa4290d175dc68c96ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1162,7 +1182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e9f2c10ea07beac4d99d97686995fbed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1200,7 +1220,7 @@ GameObject:
   - component: {fileID: 1350522782}
   - component: {fileID: 1350522781}
   - component: {fileID: 1350522783}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1485,7 @@ GameObject:
   - component: {fileID: 2029934080}
   - component: {fileID: 2029934081}
   m_Layer: 5
-  m_Name: Plates
+  m_Name: PlateCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

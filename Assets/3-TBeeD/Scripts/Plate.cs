@@ -34,7 +34,8 @@ namespace TBeeD
 
             while (transform.position.x > exitPositionX)
             {
-                transform.Translate(Vector2.left * moveSpeed);
+                // transform.Translate(Vector2.left * moveSpeed);
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 yield return null;
             }
 
@@ -42,7 +43,9 @@ namespace TBeeD
 
             while (transform.position.x >= 0f)
             {
-                transform.Translate(Vector2.left * moveSpeed);
+                // transform.Translate(Vector2.left);
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+
                 yield return null;
             }
 
