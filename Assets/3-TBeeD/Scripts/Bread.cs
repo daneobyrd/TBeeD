@@ -25,7 +25,6 @@ namespace TBeeD
 
         internal void OnCompleteFlip()
         {
-            Debug.Log("OnCompleteFlip");
             CompletedFlip = true;
         }
     }
