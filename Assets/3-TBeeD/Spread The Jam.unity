@@ -1602,7 +1602,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 4.5, y: 4.8}
   m_EdgeRadius: 0
 --- !u!114 &978872251
 MonoBehaviour:
@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350522779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2048,11 +2048,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.1
   m_Points:
-  - {x: -420, y: 285}
-  - {x: 420, y: 285}
-  - {x: 420, y: -230}
-  - {x: -420, y: -230}
-  - {x: -420, y: 285}
+  - {x: -500, y: 385}
+  - {x: 500, y: 385}
+  - {x: 500, y: -385}
+  - {x: -500, y: -385}
+  - {x: -500, y: 385}
 --- !u!1 &1435897816
 GameObject:
   m_ObjectHideFlags: 0
