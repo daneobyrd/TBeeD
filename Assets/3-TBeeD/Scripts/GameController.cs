@@ -48,6 +48,7 @@ namespace TBeeD
         {
             onLose.Invoke();
             MinigameManager.Instance.PlaySound("LoseGame");
+            rightBread.GetComponent<Bread>().Flip();
         }
 
         IEnumerator GameTimer()
