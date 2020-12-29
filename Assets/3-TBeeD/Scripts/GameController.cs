@@ -46,9 +46,8 @@ namespace TBeeD
             onLose.Invoke();
             MinigameManager.Instance.PlaySound("LoseGame");
             rightBread.GetComponent<Bread>().Flip();
-            FindObjectOfType<BeeController>().transform.SetParent(rightBread.transform);
-            FindObjectOfType<BeeController>().transform.localPosition = Vector3.zero;
             Destroy(FindObjectOfType<Brush>().gameObject);
+            Destroy(FindObjectOfType<BeeController>().gameObject);
             Destroy(paintSurface);
         }
 
@@ -57,8 +56,8 @@ namespace TBeeD
             MinigameManager.Instance.PlaySound("WinGame");
             rightBread.sortingOrder = 4;
             rightBread.GetComponent<Bread>().Flip();
-            FindObjectOfType<BeeController>().transform.SetParent(rightBread.transform);
             Destroy(FindObjectOfType<Brush>().gameObject);
+            Destroy(FindObjectOfType<BeeController>().gameObject);
             Destroy(paintSurface);
         }
 
