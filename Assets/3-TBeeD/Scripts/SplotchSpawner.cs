@@ -19,6 +19,7 @@ namespace TBeeD
         void Spawn()
         {
             int splotchCount = Random.Range(minSplotches, maxSplotches);
+            FindObjectOfType<GameController>().TotalSplotches = splotchCount;
 
             for (int i = 0; i < splotchCount; i++)
             {

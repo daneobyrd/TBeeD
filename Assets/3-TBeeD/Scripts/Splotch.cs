@@ -8,6 +8,8 @@ namespace TBeeD
         {
             if (other.CompareTag("Player"))
             {
+                FindObjectOfType<GameController>().SplotchesCovered++;
+                Destroy(gameObject);
             }
         }
     }
