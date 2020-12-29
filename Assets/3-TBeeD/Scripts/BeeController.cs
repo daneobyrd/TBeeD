@@ -19,10 +19,12 @@ namespace TBeeD
         private bool activatedDash;
         private float dashTimer = 0f;
         private ParticleSystem dashEffect;
+        private Animator animator;
 
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            animator = GetComponentInChildren<Animator>();
             currentSpeed = moveSpeed;
             dashEffect = Instantiate(dashEffectPrefab, transform).GetComponent<ParticleSystem>();
         }
@@ -65,6 +67,7 @@ namespace TBeeD
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 activatedDash = true;
+                animator.Play("beeDash");
             }
         }
 
@@ -83,6 +86,7 @@ namespace TBeeD
             {
                 activatedDash = false;
                 dashTimer = 0f;
+                animator.Play("beeMoveRegular");
             }
 
             rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
