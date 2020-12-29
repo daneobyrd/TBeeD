@@ -40,14 +40,20 @@ MonoBehaviour:
     maxPitch: 1
     source: {fileID: 0}
   - soundName: Win
-    clip: {fileID: 8300000, guid: 67e79ded56e7b584aaac55a6fa32386f, type: 3}
+    clip: {fileID: 8300000, guid: 456a9f3b1cc235d43a9d38cad6109606, type: 3}
     volume: 1
     minPitch: 0
     maxPitch: 1
     source: {fileID: 0}
   - soundName: Lose
-    clip: {fileID: 8300000, guid: 22f766dbb8abec64992b79fc18665d72, type: 3}
+    clip: {fileID: 8300000, guid: 5d9e2c28b3900bd4eb59beb969f1e282, type: 3}
     volume: 1
+    minPitch: 0
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: Buzz
+    clip: {fileID: 8300000, guid: eb557689d0dabd74388b63f65de4f0aa, type: 3}
+    volume: 0.654
     minPitch: 0
     maxPitch: 1
     source: {fileID: 0}
