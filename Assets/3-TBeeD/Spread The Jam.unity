@@ -1613,8 +1613,8 @@ MonoBehaviour:
   - {fileID: 5537440563155267229, guid: 16d2bc14631ec714f8631454345f6c4d, type: 3}
   - {fileID: -6332591390219266640, guid: 16d2bc14631ec714f8631454345f6c4d, type: 3}
   - {fileID: -9115150107718969665, guid: 16d2bc14631ec714f8631454345f6c4d, type: 3}
-  minSplotches: 3
-  maxSplotches: 5
+  minSplotches: 5
+  maxSplotches: 8
 --- !u!1 &1083619580
 GameObject:
   m_ObjectHideFlags: 0

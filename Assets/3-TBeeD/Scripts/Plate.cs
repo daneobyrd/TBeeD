@@ -16,11 +16,6 @@ namespace TBeeD
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                rightBread.Flip();
-            }
-
             if (rightBread.CompletedFlip)
             {
                 StartCoroutine(OnExit());

@@ -41,6 +41,7 @@ namespace TBeeD
             MinigameManager.Instance.PlaySound("WinGame");
             MinigameManager.Instance.minigame.gameWin = true;
             rightBread.sortingOrder = 4;
+            rightBread.GetComponent<Bread>().Flip();
         }
 
         public void OnLose()
