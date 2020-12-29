@@ -12,6 +12,7 @@ namespace TBeeD
         [SerializeField] private UnityEvent onStart;
         [SerializeField] private UnityEvent onLose;
         [SerializeField] private SpriteRenderer rightBread;
+        [SerializeField] private GameObject paintSurface;
         private bool callWin = false;
 
         [SerializeField] private float gameLength = 4.8f;
@@ -44,6 +45,8 @@ namespace TBeeD
         {
             onLose.Invoke();
             MinigameManager.Instance.PlaySound("LoseGame");
+            rightBread.GetComponent<Bread>().Flip();
+            Destroy(paintSurface);
         }
 
         private void OnWinAfterTimer()
@@ -51,6 +54,7 @@ namespace TBeeD
             MinigameManager.Instance.PlaySound("WinGame");
             rightBread.sortingOrder = 4;
             rightBread.GetComponent<Bread>().Flip();
+            Destroy(paintSurface);
         }
 
         IEnumerator GameTimer()
