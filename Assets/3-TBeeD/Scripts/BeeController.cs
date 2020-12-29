@@ -51,7 +51,10 @@ namespace TBeeD
 
             if (currentSpeed > 0)
             {
-                onBeeMove.Invoke();
+                if (!MinigameManager.Instance.minigame.gameWin)
+                {
+                    onBeeMove.Invoke();
+                }
             }
 
             if (activatedDash)
@@ -104,7 +107,11 @@ namespace TBeeD
             }
 
             rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
-            onBeeMove.Invoke();
+
+            if (!MinigameManager.Instance.minigame.gameWin)
+            {
+                onBeeMove.Invoke();
+            }
         }
     }
 }

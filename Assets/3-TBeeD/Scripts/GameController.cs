@@ -17,6 +17,11 @@ namespace TBeeD
 
         [SerializeField] private float gameLength = 4.8f;
 
+        void Awake()
+        {
+            MinigameManager.Instance.minigame.gameWin = false;
+        }
+
         private void Start()
         {
             onStart.Invoke();
@@ -57,7 +62,6 @@ namespace TBeeD
             rightBread.sortingOrder = 4;
             rightBread.GetComponent<Bread>().Flip();
             Destroy(FindObjectOfType<Brush>().gameObject);
-            Destroy(FindObjectOfType<BeeController>().gameObject);
             Destroy(paintSurface);
         }
 
