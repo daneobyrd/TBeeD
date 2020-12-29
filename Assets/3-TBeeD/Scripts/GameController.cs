@@ -8,6 +8,7 @@ namespace TBeeD
     {
         public int TotalSplotches { get; set; }
         public int SplotchesCovered { get; set; }
+        public bool GameEnded { get; set; }
 
         [SerializeField] private UnityEvent onStart;
         [SerializeField] private UnityEvent onLose;
@@ -20,6 +21,7 @@ namespace TBeeD
         void Awake()
         {
             MinigameManager.Instance.minigame.gameWin = false;
+            GameEnded = false;
         }
 
         private void Start()
@@ -43,11 +45,13 @@ namespace TBeeD
 
         public void OnWin()
         {
+            GameEnded = true;
             MinigameManager.Instance.minigame.gameWin = true;
         }
 
         public void OnLose()
         {
+            GameEnded = true;
             onLose.Invoke();
             MinigameManager.Instance.PlaySound("LoseGame");
             rightBread.GetComponent<Bread>().Flip();

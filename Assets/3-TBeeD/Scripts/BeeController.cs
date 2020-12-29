@@ -12,6 +12,7 @@ namespace TBeeD
         [SerializeField] private UnityEvent onBeeMove;
         [SerializeField] private UnityEvent onBeeDash;
         [SerializeField] private GameObject dashEffectPrefab = null;
+        private GameController gameController;
         private float currentSpeed;
         private Rigidbody2D rb;
         private float horizontalAxis;
@@ -26,6 +27,7 @@ namespace TBeeD
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
+            gameController = FindObjectOfType<GameController>();
             currentSpeed = moveSpeed;
         }
 
@@ -51,7 +53,7 @@ namespace TBeeD
 
             if (currentSpeed > 0)
             {
-                if (!MinigameManager.Instance.minigame.gameWin)
+                if (!gameController.GameEnded)
                 {
                     onBeeMove.Invoke();
                 }
@@ -72,7 +74,7 @@ namespace TBeeD
                 activatedDash = true;
                 animator.Play("beeDash");
 
-                if (!MinigameManager.Instance.minigame.gameWin)
+                if (!gameController.GameEnded)
                 {
                     onBeeDash.Invoke();
                 }
@@ -112,7 +114,7 @@ namespace TBeeD
 
             rb.AddForce(transform.up * dashForce * dashCurve.Evaluate(dashTimer / dashDuration), ForceMode2D.Impulse);
 
-            if (!MinigameManager.Instance.minigame.gameWin)
+            if (!gameController.GameEnded)
             {
                 onBeeMove.Invoke();
             }
