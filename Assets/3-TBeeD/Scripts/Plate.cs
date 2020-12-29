@@ -30,7 +30,7 @@ namespace TBeeD
         IEnumerator OnEnter()
         {
             onPlateMove.Invoke();
-            rightBread.transform.localPosition = new Vector3(rightBreadOffsetX, rightBread.transform.localPosition.y);
+            rightBread.transform.localPosition = new Vector3(rightBreadOffsetX, rightBread.transform.localPosition.y, rightBread.transform.localPosition.z);
 
             while (transform.position.x >= 0f)
             {
@@ -52,7 +52,7 @@ namespace TBeeD
                 yield return null;
             }
 
-            transform.position = new Vector2(enterPositionX, transform.position.y);
+            transform.position = new Vector3(enterPositionX, transform.position.y, transform.position.z);
             rightBread.Unflip();
             StartCoroutine(OnEnter());
         }
