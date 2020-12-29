@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightBread: {fileID: 896637341}
   rightBreadOffsetX: 6
-  moveSpeed: 6
+  moveSpeed: 8
   enterPositionX: 15
   exitPositionX: -15
   onPlateMove:
