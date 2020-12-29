@@ -7,6 +7,7 @@ namespace TBeeD
     public class GameController : MonoBehaviour
     {
         [SerializeField] private UnityEvent onStart;
+        [SerializeField] private UnityEvent onLose;
 
         private float gameLength = 4.8f;
 
@@ -24,6 +25,7 @@ namespace TBeeD
         }
         public void OnLose()
         {
+            onLose.Invoke();
             MinigameManager.Instance.PlaySound("LoseGame");
         }
 
