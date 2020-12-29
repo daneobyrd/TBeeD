@@ -2,53 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySFX : MonoBehaviour
+namespace TBeeD
 {
-    [SerializeField] private string soundName = "";
-
-    private AudioSource audioSource = null;
-    private bool initedAudio;
-
-    void Init()
+    public class PlaySFX : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-        int clipIndex = GetClipIndexFromMinigame(soundName);
+        [SerializeField] private string soundName = "";
 
-        audioSource.clip = MinigameManager.Instance.minigame.sounds[clipIndex].clip;
-        audioSource.volume = MinigameManager.Instance.minigame.sounds[clipIndex].volume;
+        private AudioSource audioSource = null;
+        private bool initedAudio;
 
-        initedAudio = true;
-    }
-
-    public void PlaySoundEffect()
-    {
-        if (!initedAudio)
+        void Init()
         {
-            Init();
+            audioSource = GetComponent<AudioSource>();
+            int clipIndex = GetClipIndexFromMinigame(soundName);
+
+            audioSource.clip = MinigameManager.Instance.minigame.sounds[clipIndex].clip;
+            audioSource.volume = MinigameManager.Instance.minigame.sounds[clipIndex].volume;
+
+            initedAudio = true;
         }
 
-        if (!audioSource.isPlaying)
+        public void PlaySoundEffect()
         {
-            audioSource.Play();
-        }
-    }
-
-    public void StopSoundEffect()
-    {
-        audioSource.Stop();
-    }
-
-    int GetClipIndexFromMinigame(string clipName)
-    {
-        int clip = 0;
-        for (int i = 0; i < MinigameManager.Instance.minigame.sounds.Length; i++)
-        {
-            if (MinigameManager.Instance.minigame.sounds[i].soundName == clipName)
+            if (!initedAudio)
             {
-                clip = i;
-                break;
+                Init();
+            }
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
             }
         }
-        return clip;
+
+        public void StopSoundEffect()
+        {
+            audioSource.Stop();
+        }
+
+        int GetClipIndexFromMinigame(string clipName)
+        {
+            int clip = 0;
+            for (int i = 0; i < MinigameManager.Instance.minigame.sounds.Length; i++)
+            {
+                if (MinigameManager.Instance.minigame.sounds[i].soundName == clipName)
+                {
+                    clip = i;
+                    break;
+                }
+            }
+            return clip;
+        }
     }
 }
