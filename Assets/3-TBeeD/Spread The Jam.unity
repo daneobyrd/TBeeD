@@ -1147,9 +1147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0397a91c64f01374c886594387f22335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
-  dashForce: 5
-  dashDuration: 0.75
+  moveSpeed: 1.25
+  dashForce: 2.5
+  dashDuration: 1
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -2447,3 +2447,4 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rightBread: {fileID: 896637338}
+  paintSurface: {fileID: 1435897816}
