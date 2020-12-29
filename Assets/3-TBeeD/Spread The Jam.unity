@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightBread: {fileID: 896637341}
   rightBreadOffsetX: 6
-  moveSpeed: 3
+  moveSpeed: 6
   enterPositionX: 15
   exitPositionX: -15
   onPlateMove:
@@ -2448,3 +2448,4 @@ MonoBehaviour:
         m_CallState: 2
   rightBread: {fileID: 896637338}
   paintSurface: {fileID: 1435897816}
+  gameLength: 4.8
