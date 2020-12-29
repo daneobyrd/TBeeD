@@ -13,6 +13,24 @@ MonoBehaviour:
   m_Name: BeeQuick
   m_EditorClassIdentifier: 
   gameTime: 1
-  music: {fileID: 0}
-  sounds: []
+  music: {fileID: 8300000, guid: 60d683cf130baa543967e991468e8c15, type: 3}
+  sounds:
+  - soundName: Jam
+    clip: {fileID: 8300000, guid: d6fa79d213016894e84654284238649d, type: 3}
+    volume: 1
+    minPitch: 0
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: Splat
+    clip: {fileID: 8300000, guid: bc49ddd4752ade842baf50295b287076, type: 3}
+    volume: 1
+    minPitch: 0
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: PlateSlide
+    clip: {fileID: 8300000, guid: 40e0c06ed14dd1f409c24368be011e7e, type: 3}
+    volume: 1
+    minPitch: 0
+    maxPitch: 1
+    source: {fileID: 0}
   gameWin: 0

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 namespace TBeeD
@@ -10,6 +11,8 @@ namespace TBeeD
         [SerializeField] private float moveSpeed = 0f;
         [SerializeField] private float enterPositionX = 0f;
         [SerializeField] private float exitPositionX = 0f;
+
+        [SerializeField] private UnityEvent onPlateMove;
 
         void Update()
         {
@@ -26,6 +29,7 @@ namespace TBeeD
 
         IEnumerator OnEnter()
         {
+            onPlateMove.Invoke();
             rightBread.transform.localPosition = new Vector3(rightBreadOffsetX, rightBread.transform.localPosition.y);
 
             while (transform.position.x >= 0f)
@@ -39,6 +43,7 @@ namespace TBeeD
 
         IEnumerator OnExit()
         {
+            onPlateMove.Invoke();
             rightBread.CompletedFlip = false;
 
             while (transform.position.x > exitPositionX)
